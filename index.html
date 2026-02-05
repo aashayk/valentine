@@ -55,23 +55,6 @@
       position: absolute;
       z-index: 9999;
     }
-    .heart {
-  position: fixed;
-  top: -10px;
-  font-size: 20px;
-  color: #ff4d6d;
-  animation: fall linear forwards;
-  pointer-events: none;
-  z-index: 1;
-}
-
-@keyframes fall {
-  to {
-    transform: translateY(110vh);
-    opacity: 0;
-  }
-}
-
   </style>
 </head>
 <body>
@@ -113,7 +96,6 @@
   });
 
   function yesClicked() {
-    heartRain = setInterval(createHeart, 200);
     document.body.innerHTML = `
       <div style="
         height:100vh;
@@ -133,28 +115,6 @@
       </div>
     `;
   }
-    <script>
-  function createHeart() {
-    const heart = document.createElement("div");
-    heart.classList.add("heart");
-    heart.innerText = "❤️";
-
-    heart.style.left = Math.random() * 100 + "vw";
-    heart.style.animationDuration = (3 + Math.random() * 2) + "s";
-    heart.style.fontSize = (16 + Math.random() * 20) + "px";
-
-    document.body.appendChild(heart);
-
-    setTimeout(() => {
-      heart.remove();
-    }, 5000);
-  }
-
-  // Create heart every 300ms
-  let heartRain;
-
-</script>
-
 </script>
 
 
